@@ -1,0 +1,183 @@
+install.packages(c("data.table", "Hmisc", "gmodels", "e1071", "doParallel", "caret", "rpart", "randomForest", "partykit", "pROC", "nnet", "xgboost", "ggplot2", "zoo"))
+x <- "Hello world"
+print(x)
+y = "Hello worled"
+d <- as.Date("2012-02-03")
+d
+f <- function(x) { x+ 1}
+f(3)
+vector <- c(1,2,3)
+s <- 1:5
+m <- matrix(data=1:6,)
+nrow = 2,
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+m
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+a <- array(
+data=1:8,
+dim = c()
+)
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+a <- array(
+data=1:8,
+dim = c(2,2,2)
+)
+a
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+a <- array(
+data=1:8,
+dim = c(2,2,2)
+)
+#list - for  heterogeneous types
+l <- list(TRUE, 123L, 2.34, "abc")
+l
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet - c(TRUE, TRUE)
+)
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet - c(TRUE, TRUE, TRUE)
+)
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet = c(TRUE, TRUE)
+)
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet = c(TRUE, TRUE, TRUE)
+)
+df
+df[1,3]
+df["HowMany"]
+df["Howmany"]
+df$Howmany
+df[["Howmany"]]
+df[2:4,]
+df[c(TRUE,FALSE,TRUE),]
+df[df$IsPet=TRUE,]
+df[df$IsPet==TRUE,]
+df[df$Name %in% c("Cat","Cow")]
+df[df$Name %in% c("Cat","Cow"),]
+1 + 2
+c(1,2,3) + c(4,5,6)
+install.package("dplyr")
+install.packages("dplyr")
+library("dplyr")
+library("dplyr")
+?data.frame
+library(caret)
+air = airquality
+air = airquality[1:4]
+train_control = trainControl(method="boot", number=50)
+m1 = train(Ozone~., data=air, trControl=train_control, method="rf")
+air=air[complete.cases(air),]
+train_control = trainControl(method="boot", number=50)
+m1 = train(Ozone~., data=air, trControl=train_control, method="rf")
+m2 = train(Ozone~., data=air, trControl=train_control, method="lm")
+m3 = train(Ozone~., data=air, trControl=train_control, method="brnn")
+allModels = resamples(list(RandomForest=m1,Linear=m2,NeuralNet=m3))
+bwplot(allModels,scales=list(relation="free"))
+train_control3 = trainControl(method="repeatedcv", number=5,repeats=3)
+m7 = train(Ozone~., data=air, trControl=train_control3, method="rf")
+m8 = train(Ozone~., data=air, trControl=train_control3, method="lm")
+m9 = train(Ozone~., data=air, trControl=train_control3, method="brnn")
+allModels3 = resamples(list(RandomForest=m7,Linear=m8,NeuralNet=m9))
+bwplot(allModels3,scales=list(relation="free"))  #scale uses diff scale for each plot
+library("stats", lib.loc="~/R/R-3.4.1/library")
+library(stats)
+iris=iris
+clusters = kmeans(iris[1,3])
+clusters = kmeans(iris[,c(1,3)], 3)
+clusters$cluster
+ggplot(iris,aes(Sepal.Length, Petal.Length, color=as.character(clusters$cluster))) + geom_point(size=3) + theme_bw()
+ggplot(iris,aes(Sepal.Length, Petal.Length, color=as.character(clusters$cluster))) + geom_point(size=4) + theme_bw()
+library(caret)
+mpg = mpg
+mpg = mpg
+View(mpg)
+ggplot(mpg, aes(x=cty,y=hwy)) + geom_point(size=2,color="blue")
+library(stats)
+clusters = kmeans(mpg[,c(cty,hwy)], 7)
+mpg = mpg
+clusters = kmeans(mpg[,c(cty,hwy)], 7)
+clusters = kmeans(mpg[,c("cty","hwy")], 7)
+clusters$cluster
+ggplot(mpg,aes(cty, hwy, color=as.character(clusters$cluster))) + geom_point(size=4) + theme_bw()
+mpg$clusters = clusters$cluster
+View(mpg)
+View(mpg)
+ggplot(mpg,aes(cty, hwy, color=as.character(class))) + geom_point(size=4) + theme_bw()
+install.packages("RSelenium")
+RSelenium::rsDriver()
+errordetails
+errordetails()
+RSelenium::rsDriver()
+RSelenium::rsDriver()
+remove.packages(RSelenium)
+remove.packages("RSelenium")
+install.packages("RSelenium")
+install.packages("RSelenium")
+install.packages("RSelenium")
+RSelenium::rsDriver()
+library(wdman)
+library(RSelenium)
+selServ <- selenium(jvmargs = c("-Dwebdriver.chrome.verboseLogging=true"))
+remDr <- remoteDriver(port = 4567L, browserName = "chrome")
+remDr$open()
+selServ$log()
+selCommand<- wdman::selenium(jvmargs = c("-Dwebdriver.chrome.verboseLogging=true"), retcommand = TRUE)
+cat(selCommand)
+remDr <- remoteDriver(port = 4567L, browserName = "chrome")
+remDr$open()
+remDr <- remoteDriver(port = 4567L, browserName = "chrome")
+remDr$open()
+remDr$getStatus()
+remDr$navigate("http://www.google.com/ncr")
+remDr$navigate("http://www.bbc.co.uk")
+webElem <- remDr$findElement(using = 'id', value = "lst-ib")
+webElem <- remDr$findElement(using = 'class', value = "advert advert--leaderboard")
+webElem <- remDr$findElement(using = 'class', value = "advert")
+webElem$highlightElement()
+webElem$highlightElement()
+library(caret)
+air = airquality[1:4]
+air=air[complete.cases(air),]
+train_control = trainControl(method="boot", number=50)
+d="rf")
+m2 = train(Ozone~., data=air, trControl=train_control, method="lm")
+m3 = train(Ozone~., data=air, trControl=train_control, method="brnn")
+m1 = train(Ozone~., data=air, trControl=train_control, method="rf")
+allModels = resamples(list(RandomForest=m1,Linear=m2,NeuralNet=m3))
+bwplot(allModels,scales=list(relation="free"))  #scale uses diff scale for each plot
+bwplot(allModels,scales=list(relation="free"))  #scale uses diff scale for each plot
+train_control3 = trainControl(method="repeatedcv", number=5,repeats=3)
+m7 = train(Ozone~., data=air, trControl=train_control3, method="rf")
+m8 = train(Ozone~., data=air, trControl=train_control3, method="lm")
+m9 = train(Ozone~., data=air, trControl=train_control3, method="brnn")
+allModels3 = resamples(list(RandomForest=m7,Linear=m8,NeuralNet=m9))
+bwplot(allModels3,scales=list(relation="free"))  #scale uses diff scale for each plot
+library(stats)
+iris=iris
+clusters = kmeans(iris[,c(1,3)], 3)
+clusters$cluster
+ggplot(iris,aes(Sepal.Length, Petal.Length, color=as.character(clusters$cluster))) + geom_point(size=4) + theme_bw()
+library(caret)
+setwd("./R scripts/spambase")
+spambase = read.csv("spambase.csv")
+spambase2 = spambase[sample(nrow(spambase)/2),]
+training = spambase2[seq(1,nrow(spambase2),2),]
+testing = spambase2[seq(2,nrow(spambase2),2),]
+model2 = train( spambase2[,-58], as.character(spambase2[,58]), method="cforest" )

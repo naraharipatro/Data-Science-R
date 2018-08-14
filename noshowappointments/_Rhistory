@@ -1,0 +1,123 @@
+install.packages(c("data.table", "Hmisc", "gmodels", "e1071", "doParallel", "caret", "rpart", "randomForest", "partykit", "pROC", "nnet", "xgboost", "ggplot2", "zoo"))
+x <- "Hello world"
+print(x)
+y = "Hello worled"
+d <- as.Date("2012-02-03")
+d
+f <- function(x) { x+ 1}
+f(3)
+vector <- c(1,2,3)
+s <- 1:5
+m <- matrix(data=1:6,)
+nrow = 2,
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+m
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+a <- array(
+data=1:8,
+dim = c()
+)
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+a <- array(
+data=1:8,
+dim = c(2,2,2)
+)
+a
+m <- matrix(data = 1:6,
+nrow = 2,
+ncol = 3)
+a <- array(
+data=1:8,
+dim = c(2,2,2)
+)
+#list - for  heterogeneous types
+l <- list(TRUE, 123L, 2.34, "abc")
+l
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet - c(TRUE, TRUE)
+)
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet - c(TRUE, TRUE, TRUE)
+)
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet = c(TRUE, TRUE)
+)
+df <- data.frame(
+Name = c("Cat","Dog","Cow"),
+Howmany = c(5,10,4),
+IsPet = c(TRUE, TRUE, TRUE)
+)
+df
+df[1,3]
+df["HowMany"]
+df["Howmany"]
+df$Howmany
+df[["Howmany"]]
+df[2:4,]
+df[c(TRUE,FALSE,TRUE),]
+df[df$IsPet=TRUE,]
+df[df$IsPet==TRUE,]
+df[df$Name %in% c("Cat","Cow")]
+df[df$Name %in% c("Cat","Cow"),]
+1 + 2
+c(1,2,3) + c(4,5,6)
+install.package("dplyr")
+install.packages("dplyr")
+library("dplyr")
+library("dplyr")
+?data.frame
+library(ggplot2)
+library(caret)
+setwd("./R scripts/noshowappointments")
+noshowdata = read.csv("KaggleV2-May-2016.csv")
+View(noshowdata)
+noshowdatashuff = noshowdata[sample(nrow(noshowdata)),]
+View(noshowdatashuff)
+noshowdata$noshow = ifelse(noshowdata$No.show == "Yes",1,0)
+View(noshowdata)
+noshowdatashuff = noshowdata[sample(nrow(noshowdata)),]
+noshowdataReq = noshowdata[,c(3,6,7,8,9,10,11,12,13)]
+View(noshowdataReq)
+noshowdataReq = noshowdata[,c(3,6,7,8,9,10,11,12,13,15)]
+View(noshowdataReq)
+noshowdataOHE = dummyVars(" ~ .", data = noshowdataReq)
+noshowdataNew = data.frame(predict(noshowdataOHE, newdata = noshowdataReq))
+View(noshowdataNew)
+noshowdataOHE = dummyVars(" ~ Gender", data = noshowdataReq)
+noshowdataNew = data.frame(predict(noshowdataOHE, newdata = noshowdataReq))
+View(noshowdataNew)
+noshowdataOHE = dummyVars(" ~ .", data = noshowdataReq)
+noshowdataNew = data.frame(predict(noshowdataOHE, newdata = noshowdataReq))
+noshowdatashuff = noshowdataNew[sample(nrow(noshowdataNew)),]
+noshowdata2 = noshowdatashuff[seq(1,nrow(noshowdatashuff),10),]
+training = noshowdata2[seq(1,nrow(noshowdata2),2),]
+testing = noshowdata2[seq(2,nrow(noshowdata2),2),]
+View(training)
+model = train(noshow ~., training, method="kknn")
+predictednoshows = predict(model,testing)
+View(training)
+sum(predictednoshows == testing$noshow)/nrow(testing)
+predictednoshows
+noshowdatashuff$noshow = ifelse(noshowdatashuff$noshow == 1,"Yes","No")
+View(noshowdatashuff)
+noshowdata2 = noshowdatashuff[seq(1,nrow(noshowdatashuff),5),]
+training = noshowdata2[seq(1,nrow(noshowdata2),2),]
+testing = noshowdata2[seq(2,nrow(noshowdata2),2),]
+model = train(noshow ~., training, method="kknn")
+predictednoshows = predict(model,testing)
+predictednoshows
+sum(predictednoshows == testing$noshow)/nrow(testing)
+View(noshowdatashuff)
+View(noshowdata)
